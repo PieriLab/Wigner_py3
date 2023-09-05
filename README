@@ -1,0 +1,6 @@
+A simple python Wigner code to produce Wigner samples and visualize normal
+modes from TeraChem Hessian.bin files.
+
+Documentation:
+python wigner.py --help
+
