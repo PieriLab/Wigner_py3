@@ -1,0 +1,27 @@
+#input file
+coordinates      x0000.xyz
+basis 6-311g*
+charge 0 #apparently they fixed the inconsistency, you can use the actual molecule charge
+spinmult 1
+run energy
+threall 1.1e-14
+convthre 1.0e-6
+precision mixed
+hhtda yes
+method b3lyp #you can also try wpbe, wb97x and so on
+fon yes # get fractionally occupied orbitals
+fon_method constant
+fon_temperature 0.35 # you can benchmark this; usual values range between 0.15 and 0.85
+cphftol 1.0e-6
+cphfiter 1000
+cphfalgorithm inc_diis
+scf diis+a
+cismax 300
+cismaxiter 500
+cisconvtol 1.0e-6
+cisnumstates 20 #how many states; you can request more to check brightness and character, then maybe we reduce them later
+closed 0 # this is to activate all orbitals
+active 163 #number of orbitals
+hhtdasinglets 20 #same as above, it's the hhTDA number of states
+gpus 1 # see how long it takes on one card, we could contemplate using 2
+
